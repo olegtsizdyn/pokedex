@@ -2,15 +2,13 @@ import React, { useEffect, useState } from 'react';
 
 import { PokemonType } from '../enumeration/constans'
 
-const PokemonCardDetails = ({ currentPokemon, getPokemonById }) => {
+const PokemonCardDetails = ({ currentPokemon, getPokemonById_API }) => {
     const [item, setItem] = useState(null);
 
     useEffect(() => {
-        currentPokemon && getPokemonById(currentPokemon.url)
+        currentPokemon && getPokemonById_API(currentPokemon.url)
             .then(res => setItem(res))
     }, [currentPokemon]);
-
-    console.log(item);
 
     return (
         <>

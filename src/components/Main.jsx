@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { getPokemons_API, getPokemonById } from '../api/pokemons'
+import { getPokemons_API, getPokemonById_API } from '../api/pokemons'
 
 import PokemonCard from './PokemonCard';
 import PokemonCardDetails from './PokemonCardDetails'
@@ -23,7 +23,7 @@ const Main = () => {
                     {pokemons && pokemons.data.results.map((item, index) => (
                         <PokemonCard 
                             item={item} 
-                            getPokemonById={getPokemonById}
+                            getPokemonById_API={getPokemonById_API}
                             setCurrentPokemon={setCurrentPokemon} 
                         />
                     ))}
@@ -46,7 +46,7 @@ const Main = () => {
                     <div className="pokemons_preview__card">
                         <PokemonCardDetails 
                             currentPokemon={currentPokemon} 
-                            getPokemonById={getPokemonById}
+                            getPokemonById_API={getPokemonById_API}
                         />
                     </div>
                 }
